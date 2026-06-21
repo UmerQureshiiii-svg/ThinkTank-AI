@@ -1,46 +1,48 @@
 # 📘 ThinkTank AI
 
-**AI-powered research assistant.**
+**AI‑Powered Research Assistant** built with **Streamlit**, **LangChain**, **HuggingFace**, and **ChromaDB**.  
+ThinkTank AI helps researchers, students, and professionals analyze documents, extract insights, and answer complex queries with intelligent embeddings and LLM‑powered reasoning.
 
 ---
 
-## 🚀 Overview
-ThinkTank AI is an interactive research assistant that helps you upload academic PDFs, analyze them, and query their content with detailed answers.  
-It combines **Streamlit** for a sleek Copilot-style UI, **LangChain** for document handling, **ChromaDB** for vector storage, and **HuggingFace FLAN-T5** for natural language Q&A.
+## 🚀 Features
+- **PDF Parsing**: Upload research papers and instantly parse them with `PyPDFLoader`.
+- **Vector Database**: Build embeddings using HuggingFace models and store them in ChromaDB.
+- **Question Answering**: Query documents with natural language and get precise answers.
+- **Adaptive Workflow**: Modular backend (`pdf_parser.py`, `embeddings.py`, `qa_engine.py`) for scalability.
+- **Streamlit UI**: Clean, interactive interface with wide layout and dashboard‑style results.
+- **Deployment Ready**: Runs seamlessly on Streamlit Cloud with Conda environment management.
 
 ---
 
-## ✨ Features
-- 📂 **Upload multiple PDFs** — handle research papers, theses, or notes.
-- 🔎 **Automatic text chunking** — split documents into manageable sections.
-- 🧠 **Embeddings + ChromaDB** — semantic search with HuggingFace sentence transformers.
-- 💬 **Interactive Q&A** — ask questions and get detailed answers.
-- 🎨 **Copilot-style UI** — gradient cards, sidebar navigation, quick prompts, and send button.
-- 📑 **Session history** — sidebar lists all asked questions for easy navigation.
-
----
-
-## 📂 Project Structure
-ThinkTankAI/
-├── app.py                  # Streamlit frontend (UI)
+## 🛠 Project Structure
+ThinkTank-AI/
+│
+├── app.py                  # Streamlit frontend
 ├── backend/
-│   ├── pdf_parser.py       # PDF → text extraction
-│   ├── embeddings.py       # Embedding + ChromaDB logic
-│   └── qa_engine.py        # HuggingFace Q&A pipeline
-├── requirements.txt        # Dependencies
-├── README.md               # Project overview
-├── screenshots/            # UI captures
-└── architecture-diagram.png
+│   ├── pdf_parser.py       # PDF loading & parsing
+│   ├── embeddings.py       # HuggingFace embeddings + ChromaDB
+│   └── qa_engine.py        # Query answering logic
+├── screenshots/            # UI screenshots
+├── temp_uploads/           # Temporary file storage
+├── architecture_diagram.png# System workflow diagram
+├── README.md               # Documentation
+└── environment.yml         # Conda environment dependencies
 
 
 ---
 
-## 🛠 Setup
+## ⚙️ Setup & Installation
 
-Clone the repo and install dependencies:
-
+### Local Setup
 ```bash
-git clone https://github.com/UmerQureshiiii-svg/ThinkTankAI.git
-cd ThinkTankAI
-pip install -r requirements.txt
+# Clone the repo
+git clone https://github.com/UmerQureshiiii-svg/ThinkTank-AI.git
+cd ThinkTank-AI
+
+# Create environment
+conda env create -f environment.yml
+conda activate thinktank-ai
+
+# Run the app
 streamlit run app.py
